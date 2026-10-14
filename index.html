@@ -68,6 +68,8 @@ header.top h1{font-family:var(--font-display);font-size:clamp(1.8rem,3.8vw,2.6re
 .ficha dt{font-family:var(--font-code);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .ficha dd{margin:0;font-weight:600;font-size:.9rem;line-height:1.3}
 .ficha .guia{font-size:.84rem}
+.ficha .ancho{grid-column:1 / -1}
+.ficha .correo{font-weight:500;overflow-wrap:anywhere;user-select:all}
 @media (max-width:520px){.ficha dl{grid-template-columns:minmax(0,1fr)}.marca .logo img{height:52px}}
 .group h2,section.below > h2,.emdn h2{font-family:var(--font-display)}
 header.top p{margin:0;color:var(--muted);max-width:68ch}
@@ -230,6 +232,7 @@ footer p{margin:0}
 .q .bt{font-weight:600}
 .q .checks{grid-template-columns:minmax(0,1fr)}
 .card.nota-ivdr{border-style:dashed}
+.aviso{margin:0 0 18px;padding:12px 14px;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--accent-soft);font-size:.92rem}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -249,6 +252,7 @@ footer p{margin:0}
           <div><dt>Plan de estudios</dt><dd>Grado en Ingeniería Biomédica (422)</dd></div>
           <div><dt>Centro</dt><dd>Escuela Politécnica de Cuenca</dd></div>
           <div><dt>Universidad</dt><dd>Universidad de Castilla-La Mancha</dd></div>
+          <div class="ancho"><dt>Profesor</dt><dd>César Sánchez Meléndez · <a class="correo" href="mailto:cesar.sanchez@uclm.es">cesar.sanchez@uclm.es</a></dd></div>
         </dl>
         <a class="guia" href="https://planea.apps.uclm.es/web/guia/422/59718" target="_blank" rel="noopener">Guía docente 2026-27 · 2.º curso, segundo semestre, 6 ECTS</a>
       </div>
@@ -272,6 +276,7 @@ footer p{margin:0}
           <textarea id="f-finalidad" placeholder="Qué hace, sobre qué muestra o parte del cuerpo y con qué fin"></textarea>
         </label>
       </div>
+      <p class="aviso" id="aviso-carga">Cargando el clasificador… Si este mensaje no desaparece, el navegador no está ejecutando JavaScript. En el móvil suele ocurrir al abrir el archivo descargado desde la app Archivos, una vista previa o el correo: ábrelo desde su dirección web en Safari o Chrome.</p>
       <form id="form" autocomplete="off"></form>
     </main>
 
@@ -299,7 +304,7 @@ footer p{margin:0}
   </section>
 
   <footer>
-    <p><strong>Prototipo docente</strong> de la asignatura Calidad y Gestión en Tecnología Sanitaria (59718), Grado en Ingeniería Biomédica (422), Escuela Politécnica de Cuenca, Universidad de Castilla-La Mancha.</p>
+    <p><strong>Prototipo docente</strong> de la asignatura Calidad y Gestión en Tecnología Sanitaria (59718), Grado en Ingeniería Biomédica (422), Escuela Politécnica de Cuenca, Universidad de Castilla-La Mancha. Autor: César Sánchez Meléndez (cesar.sanchez@uclm.es).</p>
     <p><strong>Uso docente y orientativo.</strong> El resultado no sustituye la clasificación del fabricante. <span id="discrepancias"></span></p>
     <p>MDR: <a href="https://eur-lex.europa.eu/eli/reg/2017/745" target="_blank" rel="noopener">Reglamento (UE) 2017/745 en EUR-Lex</a>, contrastado con la versión consolidada en español de 19.07.2026 (el Anexo VIII no se ha modificado desde la corrección C3, de 2021). Guías: MDCG 2021-24 y MDCG 2019-11 rev.1.</p>
     <p>Nomenclatura: EMDN (art. 26 MDR y art. 23 IVDR). Categorías según la Comisión Europea (09/2021); la versión vigente es la v2026 y debe consultarse en la <a href="https://webgate.ec.europa.eu/dyna2/emdn/" target="_blank" rel="noopener">base de datos oficial</a>.</p>
@@ -310,6 +315,7 @@ footer p{margin:0}
 
 <div class="minibar" id="minibar"></div>
 
+<script>window.addEventListener("error", function (e) { var a = document.getElementById("aviso-carga"); if (a) { a.hidden = false; a.textContent = "No se ha podido cargar el clasificador (" + (e.message || "error desconocido") + "). Indica este mensaje, el navegador y el dispositivo al profesor."; } });</script>
 <script>
 /* ===== motor.js ===== */
 /* Motor de clasificación común al MDR y al IVDR.
@@ -2082,6 +2088,8 @@ const inicial = (location.hash || "").replace("#", "");
 reg = REGS.find((r) => r.id === inicial) || REGS[0];
 construirModo();
 montar();
+const aviso = $("#aviso-carga");
+if (aviso) aviso.hidden = true;
 })();
 </script>
 
