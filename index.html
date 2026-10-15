@@ -232,6 +232,7 @@ footer p{margin:0}
 .q .bt{font-weight:600}
 .q .checks{grid-template-columns:minmax(0,1fr)}
 .card.nota-ivdr{border-style:dashed}
+.pasos.uso{max-width:80ch;font-size:.92rem;color:var(--ink);margin:2px 0 4px}
 .aviso{margin:0 0 18px;padding:12px 14px;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--accent-soft);font-size:.92rem}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -259,7 +260,13 @@ footer p{margin:0}
     </div>
     <div class="eyebrow" id="eyebrow"></div>
     <h1>Clasificador de productos sanitarios</h1>
-    <p>Herramienta de prácticas de la asignatura en dos pasos: primero, si el producto es sanitario y qué reglamento le corresponde; después, su clase de riesgo y su categoría EMDN. Cada resultado cita el artículo, la regla y el guion que lo determinan.</p>
+    <p>Herramienta docente en pruebas (no vinculante): primero, determina si el producto es sanitario y qué reglamento le corresponde; después, su clase de riesgo y su categoría EMDN. Cada resultado cita el artículo, la regla y el guion que lo determinan.</p>
+    <ol class="pasos uso">
+      <li><b>Cualifica el producto</b> en «¿Es producto sanitario?». Responde a las preguntas en orden: el resultado indica si se rige por el MDR, por el IVDR o por ninguno, y su botón final abre la clasificación correspondiente con los datos ya cargados.</li>
+      <li><b>Clasifícalo</b> respondiendo al cuestionario del reglamento. Solo aparecen las preguntas que pueden cambiar el resultado. El panel de la derecha muestra la clase, las reglas aplicadas, la determinante y la vía de evaluación de la conformidad.</li>
+      <li><b>Asigna la categoría EMDN</b> en la tarjeta del panel, siguiendo sus instrucciones.</li>
+      <li><b>Copia el informe</b> para guardar el razonamiento completo, o practica con los casos resueltos al final de la página.</li>
+    </ol>
     <div class="modo" role="group" aria-label="Reglamento" id="modo"></div>
     <div class="meta" id="meta"></div>
   </header>
@@ -2065,21 +2072,13 @@ function montar() {
   const s = st();
   if (esArbol(reg)) {
     $("#form").innerHTML = "";
-    if (!s.iniciado) {
-      s.iniciado = true;
-      const i = reg.casos.findIndex((c) => c.nombre === reg.casoInicial);
-      if (i >= 0) return cargarCaso(i);
-    }
+    s.iniciado = true;
     $("#f-nombre").value = s.nombre; $("#f-finalidad").value = s.finalidad;
     pintarCargado();
     return actualizarArbol(true);
   }
   construirFormulario();
-  if (!s.iniciado) {
-    s.iniciado = true;
-    const i = reg.casos.findIndex((c) => c.nombre === reg.casoInicial);
-    if (i >= 0) return cargarCaso(i);
-  }
+  s.iniciado = true;
   $("#f-nombre").value = s.nombre; $("#f-finalidad").value = s.finalidad;
   sincronizarControles(); pintarCargado(); actualizar();
 }
