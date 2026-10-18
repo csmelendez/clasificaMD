@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Si utilizas esta herramienta en docencia o investigación, cítala con estos datos."
+type: software
+title: "Clasificador de productos sanitarios MDR/IVDR"
+abstract: >-
+  Herramienta docente interactiva para cualificar productos sanitarios y
+  clasificarlos por riesgo según el Anexo VIII del Reglamento (UE) 2017/745 (MDR)
+  y del Reglamento (UE) 2017/746 (IVDR), con categoría EMDN, vía de evaluación de
+  la conformidad, comparación con la propuesta de revisión COM(2025) 1023 y 113
+  casos de práctica resueltos. Desarrollada para la asignatura Calidad y Gestión
+  en Tecnología Sanitaria del Grado en Ingeniería Biomédica (Escuela Politécnica
+  de Cuenca, Universidad de Castilla-La Mancha).
+authors:
+  - family-names: "Sánchez Meléndez"
+    given-names: "César"
+    orcid: "https://orcid.org/0000-0002-2717-1243"
+    affiliation: "Universidad de Castilla-La Mancha"
+    email: "cesar.sanchez@uclm.es"
+version: "2026-10-18"
+date-released: "2026-10-18"
+license:
+  - EUPL-1.2
+  - CC-BY-4.0
+repository-code: "https://github.com/csmelendez/clasificaMD"
+url: "https://csmelendez.github.io/clasificaMD/"
+keywords:
+  - productos sanitarios
+  - MDR
+  - IVDR
+  - clasificación de riesgo
+  - EMDN
+  - regulación de tecnologías sanitarias
+  - ingeniería biomédica
+  - recurso educativo abierto
