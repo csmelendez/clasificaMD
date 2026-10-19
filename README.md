@@ -2,7 +2,7 @@
 
 Herramienta docente para **cualificar** un producto (¿es producto sanitario?, ¿se rige por el MDR o por el IVDR?) y **clasificarlo por riesgo** según las reglas del Anexo VIII del Reglamento (UE) 2017/745 (MDR) y del Reglamento (UE) 2017/746 (IVDR). Cada resultado cita el artículo, la regla y el guion que lo determinan, propone la categoría EMDN y la vía de evaluación de la conformidad, y puede compararse con la propuesta de revisión COM(2025) 1023.
 
-**Abrir la herramienta:** https://csmelendez.github.io/clasificaMD/
+**Abrir la herramienta:** https://www.cesarsanchezmelendez.es/clasificaMD/
 
 - 113 casos de práctica resueltos: 26 de cualificación, 56 del MDR y 31 del IVDR.
 - Informe copiable con el razonamiento completo.
@@ -41,6 +41,6 @@ GitHub muestra el botón **Cite this repository** a partir de [`CITATION.cff`](C
 - `LICENSE`, `LICENSE-CONTENIDO.txt`, `LICENSES/`: licencias.
 - `CITATION.cff`: datos de cita.
 
-Forma parte de los recursos docentes abiertos de https://csmelendez.github.io/personal/#recursos-abiertos.
+Forma parte de los recursos docentes abiertos de https://www.cesarsanchezmelendez.es/#recursos-abiertos.
 
 © 2026 César Sánchez Meléndez.
