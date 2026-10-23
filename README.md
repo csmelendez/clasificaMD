@@ -17,11 +17,17 @@ Desarrollada para la asignatura *Calidad y Gestión en Tecnología Sanitaria* (5
 
 Abre una [incidencia (issue)](https://github.com/csmelendez/clasificaMD/issues) con el producto, su finalidad prevista, la clase que esperabas y la regla que la justifica. También puedes escribir a cesar.sanchez@uclm.es.
 
+## Uso de inteligencia artificial
+
+La herramienta se ha desarrollado con ayuda de un asistente de inteligencia artificial generativa (Claude, de Anthropic) en el código, la interfaz y la redacción de los textos explicativos y de los casos de práctica. Las reglas de cualificación y clasificación, y la solución de cada caso, se han contrastado con el texto de los reglamentos publicado en EUR-Lex y con las fuentes que cita la propia herramienta. El autor ha revisado todo el contenido y es responsable de él.
+
+La herramienta no usa inteligencia artificial al funcionar: el resultado lo calcula en el navegador un motor de reglas fijo, a partir de las respuestas del usuario, y es siempre el mismo para las mismas respuestas.
+
 ## Licencias
 
 | Parte | Licencia |
 | --- | --- |
-| Código (motor y aplicación) | [EUPL-1.2](LICENSE) |
+| Código (motor y aplicación) | [EUPL-1.2](LICENSE) (texto en https://choosealicense.com/licenses/eupl-1.2/) |
 | Casos, textos explicativos y reglas como datos | [CC BY 4.0](LICENSE-CONTENIDO.txt) |
 | Fuentes incrustadas | [SIL Open Font License 1.1](LICENSES/OFL-1.1.txt) |
 | Logotipo de la UCLM | Marca de la Universidad de Castilla-La Mancha; no incluido en estas licencias |
